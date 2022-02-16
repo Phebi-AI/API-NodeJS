@@ -33,6 +33,8 @@ Form Fields
 | emotions | boolean | Specifies if the emotion values should be returned. | Optional | false
 
 Retrieve all files of the project without any transcription, translation or emotion values (fastest).
+
+#### Request
 ```
 // Build the url to the api endpoint.
 var url = [
@@ -127,6 +129,7 @@ Form Fields
 | diarization | boolean | Specifies if the transcription should include speaker diarization. | Optional | false
 | emotions | boolean | Specifies if the emotions should be processed immediately. Avoid if multiple files are being uploaded. | Optional | false
 
+#### Request
 ```
 var url = [
     "https://",
@@ -161,6 +164,7 @@ Form Fields
 | diarization | boolean | Specifies if the transcription should include speaker diarization. | Optional | false
 | emotions | boolean | Specifies if the emotions should be processed. | Optional | false
 
+#### Request
 ```
 var url = [
     "https://",
@@ -199,6 +203,7 @@ request.post(url, {
 
 This method is to get the processing progress of a specific process.
 
+#### Request
 ```
 var url = [
     "https://",
