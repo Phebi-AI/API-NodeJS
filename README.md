@@ -68,3 +68,38 @@ request.post(url, {
     console.log(transcription);
 });
 ```
+
+### "upload/{project_name}"
+
+This method is to upload a file to a new or existing project.
+
+Form Fields
+| Field  | Type  | Description | Required | Default value |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| file | file | The file to be uploaded | Required | -
+| respondent | string | Set the respondent or file name | Optional | Name of file uploaded
+| language | integer | Set the LCID language of the file (https://docs.microsoft.com/en-us/openspecs/office_standards/ms-oe376/6c085406-a698-4e12-9d4d-c3b0ee3dbc4a) | Optional | 1033
+| transcription | boolean | Specifies if the transcription should be processed immediately | Optional | false
+| translation | boolean | Specifies if the translation should be processed immediately | Optional | false
+| diarization | boolean | Specifies if the transcription should include speaker diarization | Optional | false
+| emotions | boolean | Specifies if the emotions should be processed immediately | Optional | false
+
+```
+var url = [
+    "https://",
+    host,
+    "/api/upload/",
+    encodeURIComponent("API Creation Test")
+].join("");
+
+var req = request.post(url, { headers: accessTokenHeader }, function (err, resp, body) {
+    if (err) {
+        console.log('Error!');
+    } else {
+        console.log(body);
+    }
+});
+var form = req.form();
+form.append("transcription", "true");
+form.append('file', fs.createReadStream(fileName));
+```
