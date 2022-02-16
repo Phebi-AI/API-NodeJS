@@ -32,6 +32,7 @@ Form Fields
 | translation | boolean | Specifies if the translation should be returned | Optional | false
 | emotions | boolean | Specifies if the emotion values should be returned | Optional | false
 
+Retrieve all files of the project without any transcription, translation or emotion values (fastest).
 ```
 // Build the url to the api endpoint.
 var url = [
@@ -46,5 +47,24 @@ request.get(url, { headers: accessTokenHeader }).then((response) => {
     response = JSON.parse(response);
 
     console.log([response.length, "files loaded."].join(" "));
+});
+```
+
+Retrieve transcription, translation and emotion values for a specific subset of data.
+```
+// Build the url to the api endpoint.
+// Call the api with the request url.
+request.post(url, {
+    headers: accessTokenHeader, form: {
+        transcription: true,
+        translation: true,
+        emotions: true,
+        files: file_ids
+    }
+}).then((response) => {
+    response = JSON.parse(response);
+
+    var transcription = response[0].Transcription.map(segment => segment.Text).join(" ");
+    console.log(transcription);
 });
 ```
