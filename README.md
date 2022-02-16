@@ -1,6 +1,6 @@
 # Phebi API (NodeJS)
 
-The Phebi API is to enable 3rd party Applications access to Phebi's emotion analysis and transcription services.
+The Phebi Web API is to enable 3rd party Applications access to Phebi's emotion analysis and transcription services.
 
 The API can load files, run processes and extract transcription, translation and emotions of processed or existing data files.
 
