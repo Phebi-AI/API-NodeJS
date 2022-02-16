@@ -26,7 +26,7 @@ This method will return all data entries (files).
 
 Form Fields
 | Field  | Type  | Description | Required | Default value |
-| ------------- | ------------- |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
 | files | string array | Ids of the files that should be returned | Optional | null
 | transcription | boolean | Specifies if the transcription should be returned | Optional | false
 | translation | boolean | Specifies if the translation should be returned | Optional | false
