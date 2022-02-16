@@ -89,7 +89,7 @@ var url = [
     "https://",
     host,
     "/api/upload/",
-    encodeURIComponent("API Creation Test")
+    encodeURIComponent(project)
 ].join("");
 
 var req = request.post(url, { headers: accessTokenHeader }, function (err, resp, body) {
