@@ -93,11 +93,7 @@ var url = [
 ].join("");
 
 var req = request.post(url, { headers: accessTokenHeader }, function (err, resp, body) {
-    if (err) {
-        console.log('Error!');
-    } else {
-        console.log(body);
-    }
+    console.log(body);
 });
 var form = req.form();
 form.append("transcription", "true");
