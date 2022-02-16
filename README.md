@@ -79,10 +79,10 @@ Form Fields
 | file | file | The file to be uploaded | Required | -
 | respondent | string | Set the respondent or file name | Optional | Name of file uploaded
 | language | integer | Set the LCID language of the file (https://docs.microsoft.com/en-us/openspecs/office_standards/ms-oe376/6c085406-a698-4e12-9d4d-c3b0ee3dbc4a) | Optional | 1033
-| transcription | boolean | Specifies if the transcription should be processed immediately. Avoid if multiple files are being uploaded in a short period. | Optional | false
-| translation | boolean | Specifies if the translation should be processed immediately. Avoid if multiple files are being uploaded in a short period. | Optional | false
+| transcription | boolean | Specifies if the transcription should be processed immediately. Avoid if multiple files are being uploaded. | Optional | false
+| translation | boolean | Specifies if the translation should be processed immediately. Avoid if multiple files are being uploaded. | Optional | false
 | diarization | boolean | Specifies if the transcription should include speaker diarization. | Optional | false
-| emotions | boolean | Specifies if the emotions should be processed immediately. Avoid if multiple files are being uploaded in a short period. | Optional | false
+| emotions | boolean | Specifies if the emotions should be processed immediately. Avoid if multiple files are being uploaded. | Optional | false
 
 ```
 var url = [
