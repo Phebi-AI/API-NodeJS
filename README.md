@@ -69,6 +69,49 @@ request.post(url, {
 });
 ```
 
+#### Returns 
+```
+[
+  {
+    "Id": "e3b6a68e-9a39-41c7-b923-b837b73a7407",
+    "Respondent": "hello_world_123",
+    "Timestamp": "2020-02-03T08:33:50",
+    "Preview": "Hello World!",
+    "PreviewTranslated": "",
+    "Speakers": {},
+    "Language": 2057,
+    "Length": 0.0,
+    "Billing": [],
+    "UserAgent": null,
+    "IP": null,
+    "Referer": null,
+    "HasVideo": false,
+    "Transcription": [
+      {
+        "Position": 1.3,
+        "Duration": 0.5,
+        "Text": "Hello",
+        "Speaker": 1
+      },
+      {
+        "Position": 1.8,
+        "Duration": 0.8,
+        "Text": "World!",
+        "Speaker": 1
+      }
+    ],
+    "Emotions": [
+      {
+        "Confidence": 0.24313725490196078,
+        "Scores": [ 0.9294117647058824, 0.0, 0.0, 0.06666666666666667, 0.0 ],
+        "Speaker": 0,
+        "Position": 0
+      }
+    ]
+  }
+]
+```
+
 ### "upload/{project_name}"
 
 This method is to upload a file to a new or existing project.
