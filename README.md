@@ -27,10 +27,10 @@ This method will return all data entries (files).
 Form Fields
 | Field  | Type  | Description | Required | Default value |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
-| files | string array | Ids of the files that should be returned | Optional | null
-| transcription | boolean | Specifies if the transcription should be returned | Optional | false
-| translation | boolean | Specifies if the translation should be returned | Optional | false
-| emotions | boolean | Specifies if the emotion values should be returned | Optional | false
+| files | string array | Ids of the files that should be returned. | Optional | null
+| transcription | boolean | Specifies if the transcription should be returned. | Optional | false
+| translation | boolean | Specifies if the translation should be returned. | Optional | false
+| emotions | boolean | Specifies if the emotion values should be returned. | Optional | false
 
 Retrieve all files of the project without any transcription, translation or emotion values (fastest).
 ```
@@ -79,10 +79,13 @@ Form Fields
 | file | file | The file to be uploaded | Required | -
 | respondent | string | Set the respondent or file name | Optional | Name of file uploaded
 | language | integer | Set the LCID language of the file (https://docs.microsoft.com/en-us/openspecs/office_standards/ms-oe376/6c085406-a698-4e12-9d4d-c3b0ee3dbc4a) | Optional | 1033
-| transcription | boolean | Specifies if the transcription should be processed immediately | Optional | false
-| translation | boolean | Specifies if the translation should be processed immediately | Optional | false
-| diarization | boolean | Specifies if the transcription should include speaker diarization | Optional | false
-| emotions | boolean | Specifies if the emotions should be processed immediately | Optional | false
+| transcription | boolean | Specifies if the transcription should be processed immediately.
+Avoid if multiple files are being uploaded in a short period. | Optional | false
+| translation | boolean | Specifies if the translation should be processed immediately.
+Avoid if multiple files are being uploaded in a short period. | Optional | false
+| diarization | boolean | Specifies if the transcription should include speaker diarization. | Optional | false
+| emotions | boolean | Specifies if the emotions should be processed immediately.
+Avoid if multiple files are being uploaded in a short period. | Optional | false
 
 ```
 var url = [
