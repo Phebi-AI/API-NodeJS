@@ -100,3 +100,79 @@ form.append("transcription", "true");
 form.append("emotions", "true");
 form.append('file', fs.createReadStream(fileName));
 ```
+#### Returns 
+```
+{"Errors":[],"Files":["bdeec475-a3fc-4ca0-a570-c103465819da"]}
+```
+
+### "process/{project_name}"
+
+This method is to process specific or all files of a project.
+
+Form Fields
+| Field  | Type  | Description | Required | Default value |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| files | string array | Ids of the files that should be processed. | Optional | -
+| transcription | boolean | Specifies if the transcription should be processed. | Optional | false
+| translation | boolean | Specifies if the translation should be processed. | Optional | false
+| diarization | boolean | Specifies if the transcription should include speaker diarization. | Optional | false
+| emotions | boolean | Specifies if the emotions should be processed. | Optional | false
+
+```
+var url = [
+    "https://",
+    host,
+    "/api/process/",
+    encodeURIComponent("API Creation Test")
+].join("");
+
+request.post(url, {
+    headers: accessTokenHeader,
+    form: {
+        transcription: true,
+        translation: true,
+        diarization: true,
+        emotions: true,
+        files: files
+    }
+}).then(function (response) {
+    response = JSON.parse(response);
+
+    if (response.Error != null) {
+        console.log(response.Error);
+        return;
+    }
+
+    GetProgress(response.Id);
+});
+```
+
+#### Returns 
+```
+{ "Id": "07e8f6d7-b46a-4c64-9781-07957e0bb8ff" }
+```
+
+### "process/progress/{id}"
+
+This method is to get the processing progress of a specific process.
+
+```
+var url = [
+    "https://",
+    host,
+    "/api/process/progress/",
+    encodeURIComponent(id)
+].join("");
+
+request.get(url, {
+    headers: accessTokenHeader
+}).then(function (response) {
+    console.log(response);
+});
+```
+
+#### Returns 
+```
+{"Status": "Running", "Progress": 12}
+```
+
