@@ -97,5 +97,6 @@ var req = request.post(url, { headers: accessTokenHeader }, function (err, resp,
 });
 var form = req.form();
 form.append("transcription", "true");
+form.append("emotions", "true");
 form.append('file', fs.createReadStream(fileName));
 ```
